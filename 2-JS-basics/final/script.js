@@ -305,7 +305,7 @@ John and Mike both play basketball in different teams. In the latest 3 games, Jo
 
 4. EXTRA: Mary also plays basketball, and her team scored 97, 134 and 105 points. Like before, log the average winner to the console. HINT: you will need the && operator to take the decision. If you can't solve this one, just watch the solution, it's no problem :)
 5. Like before, change the scores to generate different winners, keeping in mind there might be draws.
-*/
+/*
 const jScores = [89,120,103];
 const mScores = [116,94,123];
 const maScores = [97,134,105];
@@ -351,7 +351,7 @@ const getWinner = function (mAve, jAve, maAve) {
 }
 
 getWinner(mAve, jAve, maAve);
-
+*/
 /*
 GOOD LUCK 😀
 */
