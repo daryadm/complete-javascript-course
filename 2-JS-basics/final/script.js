@@ -306,6 +306,7 @@ John and Mike both play basketball in different teams. In the latest 3 games, Jo
 4. EXTRA: Mary also plays basketball, and her team scored 97, 134 and 105 points. Like before, log the average winner to the console. HINT: you will need the && operator to take the decision. If you can't solve this one, just watch the solution, it's no problem :)
 5. Like before, change the scores to generate different winners, keeping in mind there might be draws.
 */
+/*
 const jScores = [89,120,103];
 const mScores = [116,94,123];
 const maScores = [97,134,105];
@@ -351,7 +352,7 @@ const getWinner = function (mAve, jAve, maAve) {
 }
 
 getWinner(mAve, jAve, maAve);
-
+*/
 /*
 GOOD LUCK 😀
 */
@@ -494,7 +495,44 @@ In the end, John would like to have 2 arrays:
 2) Containing all three final paid amounts (bill + tip).
 
 (NOTE: To calculate 20% of a value, simply multiply it with 20/100 = 0.2)
+*/
 
+const tipCalcultor = function (bill) {
+    let bills = [124, 48, 268];
+    let billsAndTips = [];
+    let billAndTip;
+    switch (true) {
+        case bill < 50:
+            billAndTip = bill + bill*0.2;
+            billsAndTips.push(billAndTip);
+            console.log(bills);
+            console.log(billsAndTips);
+            return bills, billsAndTips;
+        case bill >= 50 && bill < 200:
+            billAndTip = bill + bill*0.15;
+            bills.push(bill);
+            billsAndTips.push(billAndTip);
+            console.log(bills);
+            console.log(billsAndTips);
+
+            return bills, billsAndTips;
+        default:
+            billAndTip = bill + bill*0.1;
+            bills.push(bill);
+            billsAndTips.push(billAndTip);
+            console.log(bills);
+            console.log(billsAndTips);
+
+            return bills, billsAndTips; 
+    };
+        
+};
+tipCalcultor(268);
+
+
+
+
+/*
 GOOD LUCK 😀
 */
 /*
