@@ -104,8 +104,8 @@ GOOD LUCK 😀
 let john = {
     bills: [124, 48, 268, 180, 42],
     tip : function (bills) {
-        var tips = [];
-        var totals = [];
+        this.tips = [];
+        this.totals = [];
         for (let i = 0; i < this.bills.length; i++) {
             let percent;
             let bill = this.bills[i];
@@ -116,12 +116,24 @@ let john = {
                } else {
                 percent = 0.1;
                }
-            tips.push(percent);
-            totals.push(bill+ bill * percent);
-        }
-        console.log(tips);
-        console.log(totals);
-        return tips, totals;
-    }
+            this.tips.push(Math.round(bill * percent,1));
+            this.totals.push(bill + bill * percent);
+        };
+    return this.tips, this.totals;
+    },
+    
 };
-john.tip()
+
+
+johnTips = john.tip();
+
+aveTips = function(tipsarray) {
+    let sumTips = 0
+    for (let i = 0; i < tipsarray.length; i++) {
+        sumTips = sumTips + tipsarray[i];
+    };
+    console.log("Tips average = " + sumTips/tipsarray.length);
+    return sumTips/tipsarray.length;
+};
+aveJohn = aveTips(john.tips);
+console.log(aveJohn);
