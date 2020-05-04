@@ -262,10 +262,13 @@ var emily = {
 
 john.presentation('formal', 'morning');
 
+// borrowing the method
 john.presentation.call(emily, 'friendly', 'afternoon');
 
+// difference between call and apply: apply accepts args as an array
 //john.presentation.apply(emily, ['friendly', 'afternoon']);
 
+// bind creates a function, so we have to store it. We pre-set the friendly arg and later pass the last arg. This is called "carrying"?
 var johnFriendly = john.presentation.bind(john, 'friendly');
 
 johnFriendly('morning');
