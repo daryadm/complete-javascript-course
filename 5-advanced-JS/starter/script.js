@@ -6,13 +6,66 @@ a) question itself
 b) the answers from which the player can choose the correct one (choose an adequate data structure here, array, object, etc.)
 c) correct answer (I would use a number for this)
 
+*/
+var getRandom = function (max) {
+    return Math.floor(Math.random() * Math.floor(max));
+}
+
+var Question = {
+    addQuestion: function (question, ans0, ans1, ans2, numOfCorrectAns) {
+        var q = {}
+        var answers = {}
+        q.question = question;
+        answers[0] = ans0;
+        answers[1] = ans1;
+        answers[2] = ans2;
+        q.ansCorrect = numOfCorrectAns;
+        q.answers = answers;
+        return q
+    },
+
+    printRandomQuestion : function(arrayOfQs) {
+        var qNum = getRandom(arrayOfQs.length);
+        return arrayOfQs[qNum];
+    }, 
+
+    checkUserAnswer : function(userAnswer) {
+        if (parseInt(userAnswer) == q.ansCorrect) { 
+        alert("Senya you are right!");
+        } else {
+            alert("Wrong answer!");
+        }
+    }
+}
+
+var lifeIsGood = Question.addQuestion("Life is good?", "yes", "no", "get off", 0)
+var jypsyIsTheBest = Question.addQuestion("Jypsy is the best poodle in the world?", "who is this?", "my cat is better", "YES!!!", 2)
+var mamaCanCode = Question.addQuestion("Can my mama code?", "mama can only sleep", "I don't have mama", "of course", 2);
+var senyaCanRead = Question.addQuestion("Can Senya read?", "no, he is a baby", "yes, he can!", "he also can read in Spanish", 1)
+/*
 2. Create a couple of questions using the constructor
 
 3. Store them all inside an array
 
+*/
+var qs = []; 
+qs.push(lifeIsGood); 
+//qs.push(jypsyIsTheBest);
+qs.push(mamaCanCode);
+qs.push(senyaCanRead);
+//console.log(qs);
+//console.log(Question.printRandomQuestion(qs))
+var q = Question.printRandomQuestion(qs);
+/*
+
 4. Select one random question and log it on the console, together with the possible answers (each question should have a number) (Hint: write a method for the Question objects for this task).
 
 5. Use the 'prompt' function to ask the user for the correct answer. The user should input the number of the correct answer such as you displayed it on Task 4.
+*/
+var userAnswer = prompt(q.question + JSON.stringify(q.answers));
+Question.checkUserAnswer(userAnswer);
+
+/*
 
 6. Check if the answer is correct and print to the console whether the answer is correct ot nor (Hint: write another method for this).
 
